@@ -1,7 +1,7 @@
 {
   "name": "BaseMagic MCP",
   "description": "AI-powered MCP server on Base with x402 payments, Builder Codes, and ERC-8004 identity.",
-  "url": "http://localhost:3000",
+  "url": "https://basemagic-production.up.railway.app",
   "version": "1.0.0",
   "capabilities": {
     "streaming": true,

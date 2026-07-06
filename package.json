@@ -1,0 +1,33 @@
+{
+  "name": "basemagic-mcp",
+  "version": "1.0.0",
+  "description": "AI-powered MCP server on Base with x402 payments, Builder Codes, and ERC-8004 identity.",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "register": "tsx src/register.ts",
+    "start:a2a": "tsx src/a2a-server.ts",
+    "a2a:discover": "tsx src/a2a-client.ts --discover",
+    "a2a:chat": "tsx src/a2a-client.ts --interactive",
+    "a2a:test": "tsx src/a2a-client.ts --test",
+    "start:mcp": "tsx src/mcp-server.ts"
+  },
+  "dependencies": {
+    "agent0-sdk": "latest",
+    "dotenv": "^16.3.1",
+    "openai": "^4.68.0",
+    "express": "^4.18.2",
+    "uuid": "^9.0.0",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@x402/express": "^2.0.0",
+    "@x402/core": "^2.0.0",
+    "@x402/evm": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0",
+    "@types/express": "^4.17.21",
+    "@types/uuid": "^9.0.7"
+  }
+}

@@ -104,7 +104,9 @@ async function main() {
   console.log('');
   console.log('🔐 Setting agent wallet via setAgentWallet()...');
   const walletTx = await agent.setWallet('0x18e8c4603F7C2043333d0ed9bFD82B93176A2e40');
-  await walletTx.waitMined();
+  if (walletTx) {
+    await walletTx.waitMined();
+  }
 
   // Output results
   console.log('');

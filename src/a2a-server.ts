@@ -135,6 +135,9 @@ app.post('/a2a', async (req: Request, res: Response) => {
  */
 async function handleMethod(method: string, params: any, res?: express.Response) {
   switch (method) {
+    case 'agent.getInfo':
+      return handleAgentGetInfo();
+
     case 'message/send':
       return handleMessageSend(params, res);
     case 'tasks/get':
@@ -292,6 +295,16 @@ async function handleTasksCancel(params: { taskId: string }) {
   task.status = 'canceled';
   return task;
 }
+
+async function handleAgentGetInfo() {
+  const agentCard = await import(
+    '../.well-known/agent-card.json',
+    { assert: { type: 'json' } }
+  );
+
+  return agentCard.default;
+}
+
 
 // ============================================================================
 // Start Server

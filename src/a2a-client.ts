@@ -17,6 +17,7 @@
  */
 
 import 'dotenv/config';
+import { fetchWithPayment } from "./buyer/client.js";
 
 // ============================================================================
 // Configuration
@@ -134,7 +135,7 @@ class A2AClient {
       return this.handleStreaming(payload);
     }
 
-    const response = await fetch(`${this.baseUrl}/a2a`, {
+    const response = await fetchWithPayment(`${this.baseUrl}/a2a`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
@@ -162,7 +163,7 @@ class A2AClient {
    * Handle SSE streaming response
    */
   private async handleStreaming(payload: object): Promise<Task> {
-    const response = await fetch(`${this.baseUrl}/a2a`, {
+    const response = await fetchWithPayment(`${this.baseUrl}/a2a`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),

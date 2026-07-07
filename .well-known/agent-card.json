@@ -9,26 +9,35 @@
     "stateTransitionHistory": false
   },
   "authentication": {
-    "schemes": [
-      "x402"
-    ],
-    "credentials": null
-  },
+  "schemes": [
+    "x402"
+  ],
+  "credentials": null,
+  "x402Support": true
+},
   "defaultInputModes": [
     "text"
   ],
   "defaultOutputModes": [
     "text"
   ],
+"provider": {
+  "network": "Base",
+  "builderCode": "bc_base_mcp"
+},
   "skills": [
     {
       "id": "chat",
       "name": "Chat",
       "description": "General conversation and question answering",
-      "tags": [
-        "conversation",
-        "qa"
-      ],
+    "tags": [
+  "conversation",
+  "qa",
+  "mcp",
+  "x402",
+  "base",
+  "erc8004"
+],
       "examples": [
         "Hello, how are you?",
         "What can you help me with?"

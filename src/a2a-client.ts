@@ -238,7 +238,7 @@ class A2AClient {
       id: ++this.requestId,
     };
 
-    const response = await fetch(`${this.baseUrl}/a2a`, {
+    const response = await fetchWithPayment(`${this.baseUrl}/a2a`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
